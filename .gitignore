@@ -1,3 +1,11 @@
-#beanc904的推送密码等
+# beanc904的推送密码等:
 handbook.txt
 handbook-linux.txt
+
+# macOS:
+.DS_Store
+
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini

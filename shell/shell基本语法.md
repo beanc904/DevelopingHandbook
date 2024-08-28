@@ -17,6 +17,17 @@ Bash 是 Linux 和 Unix 系统中最常用的 shell，它是一种命令行解�
      ```
 
 ### 2. **控制结构**
+   - **大于(等于) 小于(等于) 不等于的符号使用**：
+     ```bash
+     -ge        #大于等于(greater than or equal to)
+     -gt        #大于(greater than)
+
+     -le        #小于等于(less than or equal to)
+     -lt        #小于(less than)
+
+     -eq        #等于(equal to)
+     -ne        #不等于(not equal to)
+     ```
    - **条件语句 (if)**：
      ```bash
      if [ 条件 ]; then
@@ -173,5 +184,3 @@ Bash 是 Linux 和 Unix 系统中最常用的 shell，它是一种命令行解�
    ```bash
    trap "echo 'Signal caught! Cleaning up...'; exit" SIGINT SIGTERM
    ```
-
-通过掌握以上内容，你可以编写功能强大的 Bash 脚本，用于自动化任务、处理文件、管理系统等。Bash 是 Linux 环境中非常重要的一部分，理解它的语法和功能将大大提升你的工作效率。

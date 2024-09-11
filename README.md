@@ -85,15 +85,39 @@ cargo run --bin license-gen --release
 
 #### Windows版本
 
-暂不提供
+选择对应版本安装，并替换`winmm.dll`文件即可。
 
 #### macOS版本
 
-暂不提供
+选择对应版本安装即可。
 
 ### `XMind`
 
-暂不提供
+#### Linux版本
+
+到本仓库的`release`中找到关于`XMind`的软件发布，下载对应的版本，暂只提供`Debian`分支的包，下载后进行常规软件安装。
+
+```shell
+sudo dpkg -i XMind-2020-for-Linux-amd-64bit-<version>.deb
+```
+
+开始大客户版本激活
+
+```shell
+#打开系统配置文件
+sudo vim /etc/profile
+#写入系统参数
+export VANA_LICENSE_MODE=true
+export VANA_LICENSE_TO="Coffee Bean"
+```
+
+#### Windows版本
+
+选择对应版本安装后，禁止其联网即可。
+
+#### macOS版本
+
+选择对应版本安装后，禁止其联网即可。
 
 ### `Visual Studio Code`
 

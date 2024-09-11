@@ -113,6 +113,9 @@ Ubuntu 常用命令介绍可以分为
 - `uname`: 显示系统信息。
   - 示例: `uname -a` (显示详细的系统信息)
 
+- `fc-cache`: 字体管理类命令
+  - 示例: `fc-cache -vf ~/.fonts` (刷新处于~/.fonts的个人字体缓存)
+
 ## 2. **文件和目录操作类命令**
 
 - `ls`: 列出目录中的文件。
@@ -344,7 +347,8 @@ Ubuntu 常用命令介绍可以分为
       - `-J`：解压 xz 压缩的存档。
 
 - `zip/unzip`: 压缩和解压缩 `.zip` 文件。
-  - 示例: `zip archive.zip file1 file2` (压缩), `unzip archive.zip` (解压)
+  
+  - 示例: `zip -r archive.zip file1 file2` (压缩), `unzip archive.zip` (解压)
 
 # Linux中的常用文件夹收录
 

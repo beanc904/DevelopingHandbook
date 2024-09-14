@@ -1,6 +1,6 @@
-Linux中的常用命令及目录收录
+# Ubuntu使用手册
 
-# Linux文件树结构介绍
+## Linux文件树结构介绍
 
 首先展示个人的根目录文件树。
 
@@ -78,7 +78,7 @@ Linux 的目录结构采用树状结构，所有文件和目录都从根目录 (
 
 - **`/var`**：存储可变数据文件，如日志文件 (`/var/log`)、邮件数据 (`/var/mail`)、缓存文件 (`/var/cache`)、临时文件 (`/var/tmp`) 等。
 
-# Linux中的常用命令
+## Linux中的常用命令
 
 Ubuntu 常用命令介绍可以分为
 
@@ -91,46 +91,92 @@ Ubuntu 常用命令介绍可以分为
 
 等几大类。以下是一些常用命令的介绍：
 
-## 1. **系统管理类命令**
+### 1. **系统管理类命令**
 
-- `sudo`: 以管理员身份执行命令。
-  - 示例: `sudo apt update`
+1. `sudo`: 以管理员身份执行命令。
   
-- `reboot`: 重启系统。
-  - 示例: `sudo reboot`
-  
-- `shutdown`: 关闭或重启系统。
-  - 示例: `sudo shutdown now` (立即关机), `sudo shutdown -r now` (立即重启)
-  
-- `top`: 实时查看系统运行状态、进程。
-  
-- `df`: 查看磁盘使用情况。
-  - 示例: `df -h` (以人类可读的格式显示)
-  
-- `free`: 查看内存使用情况。
-  - 示例: `free -h`
+  示例: `sudo apt update`
 
-- `uname`: 显示系统信息。
-  - 示例: `uname -a` (显示详细的系统信息)
+------
 
-- `fc-cache`: 字体管理类命令
-  - 示例: `fc-cache -vf ~/.fonts` (刷新处于~/.fonts的个人字体缓存)
+2. `reboot`: 重启系统。
 
-## 2. **文件和目录操作类命令**
+- 示例: `sudo reboot`
 
-- `ls`: 列出目录中的文件。
-  - 示例: `ls -l` (以列表形式显示文件)
-  - 参数问题: `-l`(以列表显示)`-a`(显示所有文件)
+------
 
-- `cd`: 切换目录。
-  - 示例: `cd /home/user` (切换到指定目录)
-  
-- `pwd`: 显示当前工作目录。
-  
-- `mkdir`: 创建新目录。
-  - 示例: `mkdir myfolder`
+3. `shutdown`: 关闭或重启系统。
 
-### 2.5 `rm`命令的详细使用
+- 示例: `sudo shutdown now` (立即关机), `sudo shutdown -r now` (立即重启)
+
+------
+
+4. `top`: 实时查看系统运行状态、进程。
+
+------
+
+5. `df`: 查看磁盘使用情况。
+
+- 示例: `df -h` (以人类可读的格式显示)
+
+------
+
+6. `free`: 查看内存使用情况。
+
+- 示例: `free -h`
+
+------
+
+7. `uname`: 显示系统信息。
+
+- 示例: `uname -a` (显示详细的系统信息)
+
+------
+
+8. `fc-cache`: 字体管理类命令
+
+- 示例: `fc-cache -vf ~/.fonts` (刷新处于~/.fonts的个人字体缓存)
+
+### 2. **文件和目录操作类命令**
+
+1. `ls`: 列出目录中的文件。
+
+- 示例: `ls -l` (以列表形式显示文件)
+- 参数问题: `-l`(以列表显示)`-a`(显示所有文件)
+
+------
+
+2. `cd`: 切换目录。
+
+- 示例: `cd /home/user` (切换到指定目录)
+
+------
+
+3. `pwd`: 显示当前工作目录。
+
+------
+
+4. `mkdir`: 创建新目录。
+
+- 示例: `mkdir myfolder`
+
+------
+
+5. `mount`: 挂载磁盘操作。
+
+- 挂载:
+
+  ```bash
+  sudo mount </dev/> </mnt/>
+  ```
+
+- 卸载：
+
+  ```bash
+  sudo unmount </mnt/>
+  ```
+
+#### 2.5 `rm`命令的详细使用
 
 - `rm`: 删除文件或目录。
   - 示例: `rm filename` (删除文件), `rm -r foldername` (删除目录及其内容)
@@ -162,7 +208,9 @@ Ubuntu 常用命令介绍可以分为
       - `--no-preserve-root`: 当使用 `-r` 参数删除根目录时，不保留根目录。这是非常危险的操作，通常不推荐使用。
         - 示例: `rm -r --no-preserve-root /`
 
-### 2.6 `cp`命令的详细使用
+------
+
+#### 2.6 `cp`命令的详细使用
 
 - `cp`: 复制文件或目录。
   - 示例: `cp file1 file2` (复制文件), `cp -r dir1 dir2` (递归复制目录)
@@ -197,62 +245,128 @@ Ubuntu 常用命令介绍可以分为
     - `--backup`: 备份目标文件。如果目标文件已存在，会创建一个备份副本。
       - 示例: `cp --backup file1.txt file2.txt`
 
-- `mv`: 移动或重命名文件。
-  - 示例: `mv oldname newname` (重命名), `mv file /path/to/destination` (移动文件)
+------
 
-## 3. **网络类命令**
+7. `mv`: 移动或重命名文件。
 
-- `ping`: 测试网络连接。
-  - 示例: `ping google.com`
+- 示例: `mv oldname newname` (重命名), `mv file /path/to/destination` (移动文件)
 
-- `ifconfig`: 查看或配置网络接口（已被 `ip` 命令取代）。
-  - 示例: `ifconfig` (显示网络接口信息)
+### 3. **网络类命令**
 
-- `ip`: 查看或管理网络配置。
-  - 示例: `ip a` (查看网络接口)
+1. `ping`: 测试网络连接。
 
-- `curl`: 获取或发送网络请求。
-  - 示例: `curl http://example.com`
+- 示例: `ping google.com`
 
-- `wget`: 下载文件。
-  - 示例: `wget http://example.com/file.zip`
+------
 
-## 4. **软件管理类命令**
+2. `ifconfig`: 查看或配置网络接口（已被 `ip` 命令取代）。
 
-- `apt`: Ubuntu 的包管理工具，常用于安装、更新和卸载软件。
-  - `apt update`: 更新软件源列表。
-  - `apt upgrade`: 升级已安装的软件包。
-  - `apt install`: 安装软件包。
-    - 示例: `sudo apt install vim`
-  - `apt remove`: 卸载软件包。
-    - 示例: `sudo apt remove package-name`
+- 示例: `ifconfig` (显示网络接口信息)
 
-- `dpkg`: 用于直接操作 `.deb` 包。
-  - 示例: `sudo dpkg -i package.deb` (安装软件包)
+------
 
-## 5. **文件权限和用户管理类命令**
+3. `ip`: 查看或管理网络配置。
 
-- `chmod`: 修改文件权限。
+- 示例: `ip a` (查看网络接口)
+
+------
+
+4. `curl`: 获取或发送网络请求。
+
+- 示例: `curl http://example.com`
+
+------
+
+5. `wget`: 下载文件。
+
+- 示例: `wget http://example.com/file.zip`
+
+------
+
+6. `proxy_on\off`: 配置终端代理。
+
+- 配置文件信息
+
+ `.zshrc`和`.bashrc`中配置以下内容
+
+ ```shell
+ function proxy_on() {
+  export http_proxy=http://127.0.0.1:<port>
+  export https_proxy=http://127.0.0.1:<port>
+  echo -e "终端代理已开启"
+ }
+ 
+ function proxy_off() {
+  unset proxy_http proxy_https
+  echo -e "终端代理已关闭"
+ }
+ ```
+
+ 终端刷新环境函数
+
+ ```bash
+ source .zshrc
+ ```
+
+- 测试网络连接
+
+ 跳转至`4.`使用`curl -I www.google.com`查看连接。
+
+### 4. **软件管理类命令**
+
+1. `apt`: Ubuntu 的包管理工具，常用于安装、更新和卸载软件。
+
+- `apt update`: 更新软件源列表。
+- `apt upgrade`: 升级已安装的软件包。
+- `apt install`: 安装软件包。
+  - 示例: `sudo apt install vim`
+- `apt remove`: 卸载软件包。
+  - 示例: `sudo apt remove package-name`
+
+------
+
+2. `dpkg`: 用于直接操作 `.deb` 包。
+
+- 示例: `sudo dpkg -i package.deb` (安装软件包)
+
+### 5. **文件权限和用户管理类命令**
+
+#### 5.1 `chmod`: 修改文件权限
+
+- `chmod`命令的
   - 示例: `chmod 755 file` (给予文件所有者读写执行权限，其他用户仅有读取和执行权限)
 
-- `chown`: 改变文件所有者。
-  - 示例: `chown user:group file`
+------
 
-- `useradd`: 添加新用户。
-  - 示例: `sudo useradd -m newuser`
+2. `chown`: 改变文件所有者。
+  
+- 示例: `chown user:group file`
 
-- `passwd`: 修改用户密码。
-  - 示例: `sudo passwd username`
+------
 
-## 6. **搜索和压缩类命令**
+3. `useradd`: 添加新用户。
 
-- `grep`: 在文件中搜索特定字符串。
-  - 示例: `grep 'search-term' filename`
+- 示例: `sudo useradd -m newuser`
 
-- `find`: 搜索文件和目录。
-  - 示例: `find /path -name filename`
+------
 
-### 6.3 `tar`命令的详细使用
+4. `passwd`: 修改用户密码。
+  
+- 示例: `sudo passwd username`
+
+### 6. **搜索和压缩类命令**
+
+1. `grep`: 在文件中搜索特定字符串。
+  
+- 示例: `grep 'search-term' filename`
+
+------
+
+2. `find`: 搜索文件和目录。
+  
+- 示例: `find /path -name filename`
+
+#### 6.3 `tar`命令的详细使用
 
 - `tar`: 压缩或解压 `.tar` 文件。
   - 示例: `tar -czvf archive.tar.gz /path/to/files` (创建压缩文件)
@@ -346,17 +460,19 @@ Ubuntu 常用命令介绍可以分为
       - `-x`：解压存档。
       - `-J`：解压 xz 压缩的存档。
 
-- `zip/unzip`: 压缩和解压缩 `.zip` 文件。
+------
+
+4. `zip/unzip`: 压缩和解压缩 `.zip` 文件。
   
-  - 示例: `zip -r archive.zip file1 file2` (压缩), `unzip archive.zip` (解压)
+- 示例: `zip -r archive.zip file1 file2` (压缩), `unzip archive.zip` (解压)
 
-# Linux中的常用文件夹收录
+## Linux中的常用文件夹收录
 
-## 1. 主文件目录
+### 1. 主文件目录
 
 主文件目录，即`home`目录，它的实际目录为`/home/username/`
 
-## 2. 个人软件配置信息存放汇总
+### 2. 个人软件配置信息存放汇总
 
 大多个人软件配置信息都存放在`home`文件夹下，以`.<filename>`的形式隐藏存放，以下列出目前常见的配置文件
 
@@ -375,15 +491,15 @@ Ubuntu 常用命令介绍可以分为
 - `/usr/share/applications/`：存放系统的`<application>.desktop`快捷启动方式
 - `/etc/apt/source.list.d/`：与`source.list`一致，都是存放软件包管理器的源的，但`source.list.d/`中存放着多个第三方`<source>.list`
 
-## 3. 文件的书写格式
+### 3. 文件的书写格式
 
 以下将会对个别常用配置文件的配置信息书写格式进行列举
 
-### `.desktop`
+#### `.desktop`
 
 `.desktop` 文件是用于在 Linux 桌面环境中创建快捷方式或启动器的标准文件格式。它们通常用于在桌面环境（如 GNOME、KDE、XFCE 等）中创建应用程序的启动图标。下面是 `.desktop` 文件的书写格式和常见内容：
 
-#### 基本结构
+##### 基本结构
 
 `.desktop` 文件是一个文本文件，通常包含以下几个部分：
 
@@ -451,7 +567,7 @@ Ubuntu 常用命令介绍可以分为
      Actions=NewWindow;OpenFile;
      ```
 
-#### 示例 `.desktop` 文件
+##### 示例 `.desktop` 文件
 
 ```plaintext
 [Desktop Entry]
@@ -464,7 +580,7 @@ Type=Application
 Categories=Utility;Development;
 ```
 
-#### 备注
+##### 备注
 
 - **路径**: `Exec` 和 `Icon` 字段的路径可以是绝对路径，也可以是相对路径。如果使用相对路径，应该是相对于用户的主目录。
 - **占位符**: `Exec` 字段中的 `%F` 是一个占位符，表示打开的文件。你可以根据需要使用其他占位符，如 `%U`（URL）或 `%d`（目录）。

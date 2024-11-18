@@ -21,8 +21,8 @@
 
 - `Git`
 
-  - git命令汇总大全.md
-  - git使用手册.md
+  - [git使用手册](/git/git-using-handbook.md)
+  - [git命令汇总](/git/git-command-overall.md)
 
 - `Java`
 
@@ -30,19 +30,23 @@
 
 - `Linux`
 
-  - ubuntu使用手册.md
+  - [ubuntu发行版使用手册](/linux/ubuntu-using-handbook.md)
 
 - `Markdown`
 
-  - markdown基本语法.md
+  - [markdown使用手册](/markdown/markdown-base-grammar.md)
 
 - `Shell`
 
-  - shell基本语法.md
+  - [shell基本语法](/shell/shell-base-grammar.md)
 
 - `Vim`
 
-  - vim编辑器使用手册.md
+  - [vim使用手册](/vim/vim-using-handbook.md)
+
+- `Regex`
+
+  - [正则表达式基本语法](/regex/regex-base-grammar.md)
 
 就目前为止，以上为项目中的手簿清单，后续将会对其进行更进一步的修正与更新。
 

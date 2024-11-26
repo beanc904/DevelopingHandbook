@@ -20,6 +20,53 @@ tixat
 
 ---
 
+### 主要用法
+
+#### 普通匹配
+
+将匹配到的字符收录起来，例如：
+
+``` python
+import re
+
+content = "my name is _@beanc904_."
+result = re.findall("my", content)
+# result中将会存储被匹配到的["my"]字符数组
+```
+
+#### 内容提取
+
+将匹配到的字符串中的关键词给提取出来，例如：
+
+- 提取括号`()`中的内容
+
+	``` python
+	import re
+	
+	content = "(aa)(bbb)(cc)"
+	result = re.findall(r"\(([^)]*)\)")
+	# 结果是["aa", "bbb", "cc"]
+	```
+	
+- 提取匹配词等号后的内容
+
+	``` python
+	import re
+	
+	content = """
+	account=coffeebean
+	password=123456
+	#age=19
+	#gender=male
+	"""
+	
+	result = re.findall(r"^password=(.*)", content, re.M)
+	# re.M是开启多行匹配模式，否则^$默认只匹配第一行
+	# 结果是['123456']
+	```
+
+---
+
 ### **正则表达式的组成**
 
 正则表达式由**普通字符**和**元字符**（特殊符号）组成，用于构建匹配规则。

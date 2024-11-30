@@ -6,7 +6,6 @@
 - [功能清单](#功能清单)
 - [安装指南](#使用工具安装指南)
 - [使用说明](#使用说明)
-- [贡献指南](#贡献指南)
 - [许可证](#许可证)
 - [作者](#作者)
 - [鸣谢](#鸣谢)
@@ -26,11 +25,19 @@
 
 - `Java`
 
-  - Java常用核心类库.xmind
+  - [Java常用核心类库](/java/java-core-class-lib.md)
+
+  - `jvm`
+
+    - [堆栈的区分](/java/jvm/Heap-vs-Stack.md)
+    - [jvm系统原理](/java/jvm/)
 
 - `Linux`
 
   - [ubuntu发行版使用手册](/linux/ubuntu-using-handbook.md)
+    - [linux文件树](/linux/linux-filetree-introduce.md)
+    - [linux常用命令](/linux/linux-common-commands.md)
+    - [linux常用配置](/linux/linux-common-configs.md)
 
 - `Markdown`
 
@@ -47,6 +54,10 @@
 - `Regex`
 
   - [正则表达式基本语法](/regex/regex-base-grammar.md)
+
+- `Makefile`
+
+  - [Makefile基本语法](/makefile/makefile-base-grammar.md)
 
 就目前为止，以上为项目中的手簿清单，后续将会对其进行更进一步的修正与更新。
 
@@ -143,30 +154,6 @@ git clone https://github.com/beanc904/DevelopingHandbook.git
 cd DevelopingHandbook/
 ```
 
-## 贡献指南
-
-1. 克隆本仓库
-
-2. 创建分支
-
-   ```shell
-   git checkout -b feature/your-feature-name
-   ```
-
-3. 提交更改
-
-   ```shell
-   git commit -m "Update some new handbooks"
-   ```
-
-4. 推送到分支
-
-   ```shell
-   git push origin feature/your-feature-name
-   ```
-
-5. 提交`Pull Request`
-
 ## 许可证
 
 该手簿项目使用[MIT 许可证](LICENSE)
@@ -177,7 +164,9 @@ cd DevelopingHandbook/
 
 ## 鸣谢
 
-- **DiamondHunters**：[NodeInject](https://github.com/DiamondHunters/NodeInject)用于Linux版本的`Typroa`破解
+- **DiamondHunters**: [NodeInject](https://github.com/DiamondHunters/NodeInject)用于Linux版本的`Typroa`破解
+- **尚硅谷（宋红康）**: [JVM全套教程](https://www.bilibili.com/video/BV1PJ411n7xZ/)`jvm`笔记的自定义修订
+- **youthlql**: [JavaYouth](https://github.com/youthlql/JavaYouth/tree/main/docs/JVM)fork其`jvm`笔记
 
 ## 注：
 

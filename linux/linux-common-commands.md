@@ -246,6 +246,40 @@ Ubuntu 常用命令介绍可以分为
 
  跳转至`4.`使用`curl -I www.google.com`查看连接。
 
+- 使用`ssh`进行远程连接
+
+  1. 服务软件`openssh-server`准备
+    ```bash
+    sudo apt install openssh-server
+    ```
+  2. 防火墙配置
+    ```bash
+    sudo ufw allow ssh
+    sudo ufw enable
+    ```
+  3. 服务端`ssh`服务启动
+    ```bash
+    # 默认情况下监听服务ssh.socket是开启的，并且开机自启
+    sudo systemctl start ssh        //启动服务ssh.server
+    sudo systemctl start ssh.socket //启动服务ssh.socket
+    sudo systemctl enable ssh       //设置开机自启
+    sudo systemctl status ssh       //查看ssh服务状态
+    ```
+  4. 服务端IP查询
+    ```bash
+    ip a
+    ```
+  5. 客户端远程连接与断开
+    ```bash
+    ssh hostname@ipaddress          //连接
+    exit                            //断开
+    ```
+  6. 服务端`ssh`服务关闭
+    ```bash
+    sudo systemctl stop ssh             //关闭ssh.server
+    sudo systemctl disable ssh.socket   //关闭ssh.socket
+    ```
+
 ### 4. **软件管理类命令**
 
 1. `apt`: Ubuntu 的包管理工具，常用于安装、更新和卸载软件。

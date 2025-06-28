@@ -6,7 +6,6 @@
 - [功能清单](#功能清单)
 - [安装指南](#使用工具安装指南)
 - [使用说明](#使用说明)
-- [许可证](#许可证)
 - [作者](#作者)
 - [鸣谢](#鸣谢)
 
@@ -18,48 +17,46 @@
 
 以下列出目前已包含的开发语言脚本与系统的使用手簿。
 
-- `Git`
+1. 系统工具
+    - `Git`
+      - [git使用手册](/git/git-using-handbook.md)
+      - [git命令汇总](/git/git-command-overall.md)
 
-  - [git使用手册](/git/git-using-handbook.md)
-  - [git命令汇总](/git/git-command-overall.md)
+    - `Linux`
+      - [ubuntu发行版使用手册](/linux/ubuntu-using-handbook.md)
+        - [linux文件树](/linux/linux-filetree-introduce.md)
+        - [linux常用命令](/linux/linux-common-commands.md)
+        - [linux常用配置](/linux/linux-common-configs.md)
 
-- `Java`
+    - `Vim`
+      - [vim使用手册](/vim/vim-using-handbook.md)
 
-  - [Java常用核心类库](/java/java-core-class-lib.md)
+    - `Regex`
+      - [正则表达式基本语法](/regex/regex-base-grammar.md)
 
-  - `jvm`
+2. 常用语言语法
+    - `Java`
+      - `jvm`
+        - [堆栈的区分](/java/jvm/Heap-vs-Stack.md)
+        - [jvm系统原理](/java/jvm/)
 
-    - [堆栈的区分](/java/jvm/Heap-vs-Stack.md)
-    - [jvm系统原理](/java/jvm/)
+    - `Markdown`
+      - [markdown使用手册](/markdown/markdown-base-grammar.md)
 
-- `Linux`
+    - `Shell`
+      - [shell基本语法](/shell/shell-base-grammar.md)
 
-  - [ubuntu发行版使用手册](/linux/ubuntu-using-handbook.md)
-    - [linux文件树](/linux/linux-filetree-introduce.md)
-    - [linux常用命令](/linux/linux-common-commands.md)
-    - [linux常用配置](/linux/linux-common-configs.md)
+    - `Makefile`
+      - [Makefile基本语法](/makefile/makefile-base-grammar.md)
 
-- `Markdown`
+3. 问答思考
+    - [Q&A](/QA/)
+        - [权限修饰符](./QA/access-permission-modifier.md)
+        - [基本字符量区分](./QA/char-types.md)
+        - [常量指针与指针常量](./QA/const-pointer.md)
+        - [四种cpp类型转换工具](./QA/four-common-cpp_cast.md)
 
-  - [markdown使用手册](/markdown/markdown-base-grammar.md)
-
-- `Shell`
-
-  - [shell基本语法](/shell/shell-base-grammar.md)
-
-- `Vim`
-
-  - [vim使用手册](/vim/vim-using-handbook.md)
-
-- `Regex`
-
-  - [正则表达式基本语法](/regex/regex-base-grammar.md)
-
-- `Makefile`
-
-  - [Makefile基本语法](/makefile/makefile-base-grammar.md)
-
-就目前为止，以上为项目中的手簿清单，后续将会对其进行更进一步的修正与更新。
+后续将会对其进行更进一步的修正与更新。
 
 ## 使用工具安装指南
 
@@ -67,7 +64,6 @@
 
 - **`Typora`**：包含Linux、macOS、Windows版本
 - **`XMind`**：包含Linux、macOS、Windows版本
-- **`Visual Studio Code`**：包含Linux、macOS、Windows版本
 
 下面将对工具进行安装与破解。
 
@@ -134,12 +130,6 @@ export VANA_LICENSE_TO="Coffee Bean"
 
 选择对应版本安装后，禁止其联网即可。
 
-### `Visual Studio Code`
-
-访问[VS Code][1]官网
-
-[1]:https://code.visualstudio.com
-
 ## 使用说明
 
 将本项目克隆至本地
@@ -154,10 +144,6 @@ git clone https://github.com/beanc904/DevelopingHandbook.git
 cd DevelopingHandbook/
 ```
 
-## 许可证
-
-该手簿项目使用[MIT 许可证](LICENSE)
-
 ## 作者
 
 **beanc904**：[我的GitHub主页](https://github.com/beanc904)
@@ -168,6 +154,3 @@ cd DevelopingHandbook/
 - **尚硅谷（宋红康）**: [JVM全套教程](https://www.bilibili.com/video/BV1PJ411n7xZ/)`jvm`笔记的自定义修订
 - **youthlql**: [JavaYouth](https://github.com/youthlql/JavaYouth/tree/main/docs/JVM)fork其`jvm`笔记
 
-## 注：
-
-后续将不定期更新

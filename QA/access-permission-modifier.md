@@ -233,3 +233,4 @@ MyClass obj = new MyClass();
     | **protected**| ✅          | ✅               | ✅             | ❌   |
     | **default** (无修饰符) | ✅          | ✅               | ❌             | ❌   |
     | **private**  | ✅          | ❌               | ❌             | ❌   |
+

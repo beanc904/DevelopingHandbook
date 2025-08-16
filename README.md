@@ -15,46 +15,7 @@
 
 ## 功能清单
 
-以下列出目前已包含的开发语言脚本与系统的使用手簿。
-
-1. 系统工具
-    - `Git`
-      - [git使用手册](/git/git-using-handbook.md)
-      - [git命令汇总](/git/git-command-overall.md)
-
-    - `Linux`
-      - [ubuntu发行版使用手册](/linux/ubuntu-using-handbook.md)
-        - [linux文件树](/linux/linux-filetree-introduce.md)
-        - [linux常用命令](/linux/linux-common-commands.md)
-        - [linux常用配置](/linux/linux-common-configs.md)
-
-    - `Vim`
-      - [vim使用手册](/vim/vim-using-handbook.md)
-
-    - `Regex`
-      - [正则表达式基本语法](/regex/regex-base-grammar.md)
-
-2. 常用语言语法
-    - `Java`
-      - `jvm`
-        - [堆栈的区分](/java/jvm/Heap-vs-Stack.md)
-        - [jvm系统原理](/java/jvm/)
-
-    - `Markdown`
-      - [markdown使用手册](/markdown/markdown-base-grammar.md)
-
-    - `Shell`
-      - [shell基本语法](/shell/shell-base-grammar.md)
-
-    - `Makefile`
-      - [Makefile基本语法](/makefile/makefile-base-grammar.md)
-
-3. 问答思考
-    - [Q&A](/QA/)
-        - [权限修饰符](./QA/access-permission-modifier.md)
-        - [基本字符量区分](./QA/char-types.md)
-        - [常量指针与指针常量](./QA/const-pointer.md)
-        - [四种cpp类型转换工具](./QA/four-common-cpp_cast.md)
+自行翻阅.
 
 后续将会对其进行更进一步的修正与更新。
 

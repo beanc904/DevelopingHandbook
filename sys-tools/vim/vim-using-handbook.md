@@ -10,139 +10,139 @@ vim编辑器的使用手册
 **可视模式**：可对文件内容进行批量选中；
 
 ```vim
-#进入文件默认为命令模式
-i   a                       //进入编辑模式【命令模式】
-#其中i是在光标前插入，a是在光标后插入
+" 进入文件默认为命令模式
+i   a                       " 进入编辑模式【命令模式】
+" 其中i是在光标前插入，a是在光标后插入
 
-esc                         //退出编辑模式【编辑模式、可视模式】
-v                           //进入可视模式【命令模式】
+esc                         " 退出编辑模式【编辑模式、可视模式】
+v                           " 进入可视模式【命令模式】
 ```
 
 ## 2.vim的多种命令行进入方法
 **进入**
 
 ```vim
-vim <file>                  //打开file
+vim <file>                  " 打开file
 
-vim +<number> <file>        //打开file并移动光标至number行
+vim +<number> <file>        " 打开file并移动光标至number行
 
-vim +/<keyword> <file>      //打开file并高亮显示keyword
+vim +/<keyword> <file>      " 打开file并高亮显示keyword
 
-vim <file> <file> <file>    //打开数个file，可在文件内切换
+vim <file> <file> <file>    " 打开数个file，可在文件内切换
 ```
 
 **退出**
 
 ```vim
-:q                          //在命令模式下
+:q                          " 在命令模式下
 ```
 
 # 二、命令模式
 
 ## 1.光标移动
 ```vim
-^                           //移动至行首
+^                           " 移动至行首
 
-$                           //移动至行末
+$                           " 移动至行末
 
-gg                          //移动至文件首行
+gg                          " 移动至文件首行
 
-G                           //移动至文件末行
+G                           " 移动至文件末行
 
-<number> + G                //移动至文件number行
+<number> + G                " 移动至文件number行
 
-<number> + 方向键上下左右     //向上向下向左向右移动number行
+<number> + 方向键上下左右     " 向上向下向左向右移动number行
 
-Ctrl + b                    //向上翻屏
+Ctrl + b                    " 向上翻屏
 
-Ctrl + f                    //向下翻屏
+Ctrl + f                    " 向下翻屏
 ```
 
 ## 2.复制与粘贴
 ```vim
-yy                          //复制光标所在行
+yy                          " 复制光标所在行
 
-<number> yy                 //从光标行开始向下复制指定number行，包括光标行在内
+<number> yy                 " 从光标行开始向下复制指定number行，包括光标行在内
 
-Ctrl + v yy                 //进入可视化复制，移动方向选中后，yy确认
+Ctrl + v yy                 " 进入可视化复制，移动方向选中后，yy确认
 
-p                           //在光标后位置处粘贴寄存器中内容
+p                           " 在光标后位置处粘贴寄存器中内容
 ```
 
 ## 3.剪切与删除
 ```vim
-dd                          //剪切光标所在行，同时也是删除
+dd                          " 剪切光标所在行，同时也是删除
 
-<number> dd                 //从光标行开始向下剪切指定number行，包括光标行在内
+<number> dd                 " 从光标行开始向下剪切指定number行，包括光标行在内
 
-D                           //剪切光标所在行，但不会上移以下内容填充空白
+D                           " 剪切光标所在行，但不会上移以下内容填充空白
 ```
 
 ## 4.撤销与恢复
 ```vim
-:u                          //撤销上一步操作
+:u                          " 撤销上一步操作
 
-Ctrl + r                    //恢复撤销操作
+Ctrl + r                    " 恢复撤销操作
 ```
 
 ## 5.调用外部命令
 ```vim
-:q <outside order>          //将会退出文件执行outside order后按任意键回到文件中
+:q <outside order>          " 将会退出文件执行outside order后按任意键回到文件中
 ```
 
 ## 6.存储与退出等操作
 ```vim
-:w                          //保存当前文件
-:w <path>                   //将当前文件另存至path
+:w                          " 保存当前文件
+:w <path>                   " 将当前文件另存至path
 
-:q                          //退出当前文件
-:wq                         //保存并退出
-:q!                         //不保存并强制退出
+:q                          " 退出当前文件
+:wq                         " 保存并退出
+:q!                         " 不保存并强制退出
 ```
 
 ## 7.查找与替换
 ```vim
 #查找
-:/<keyword>                 //高亮显示文件中的keyword
+:/<keyword>                 " 高亮显示文件中的keyword
 
-N / n                       //上移下移查找的内容
+N / n                       " 上移下移查找的内容
 
-:nohl                       //取消高亮显示查找的内容
+:nohl                       " 取消高亮显示查找的内容
 
 #替换
-:s/<context>/<new context>      //替换光标行第一个context
+:s/<context>/<new context>      " 替换光标行第一个context
 
-:s/<context>/<new context>/g    //替换光标行所有context
+:s/<context>/<new context>/g    " 替换光标行所有context
 
-:%s/<context>/<new context>     //替换文件内所有行的第一处context
+:%s/<context>/<new context>     " 替换文件内所有行的第一处context
 
-:%s/<context>/<new context>/g   //替换文件内所有行的所有context
+:%s/<context>/<new context>/g   " 替换文件内所有行的所有context
 ```
 
 ## 8.切换文件
 ```vim
-:files                          //查看同时打开的所有files
+:files                          " 查看同时打开的所有files
 
-:open <file>                    //切换至其他打开的文件
+:open <file>                    " 切换至其他打开的文件
 
-:bp                             //切换至上一个打开的文件
+:bp                             " 切换至上一个打开的文件
 
-:bn                             //切换至下一个打开的文件
+:bn                             " 切换至下一个打开的文件
 ```
 
 ## 9.vim的功能模块
 **行号显示**：
 ```vim
-:set nu                         //临时显示行号
+:set nu                         " 临时显示行号
 
-:set nonu                       //临时取消行号
+:set nonu                       " 临时取消行号
 ```
 
 **代码着色**：
 ```vim
-:syntax on                      //临时开启代码着色
+:syntax on                      " 临时开启代码着色
 
-:syntax off                     //临时关闭代码着色
+:syntax off                     " 临时关闭代码着色
 ```
 
 ## 10.简易计算器
@@ -248,7 +248,7 @@ inoremap jk <Esc>
 你可以将命令别名或键映射写入 Vim 的配置文件（如 `~/.vimrc` 或 `~/.config/nvim/init.vim`）中，这样每次启动 Vim 时这些别名和映射都会自动加载。
 
 **示例：**
-```shell
+```vim
 " 在 .vimrc 文件中
 command WQ wq
 nnoremap <leader>w :w<CR>
@@ -258,8 +258,8 @@ inoremap jk <Esc>
 ## 4.退出方式
 **语法**：
 ```vim
-#在打开的文件未被修改的情况下，使用:x不会修改文件的修改时间
+" 在打开的文件未被修改的情况下，使用:x不会修改文件的修改时间
 :x
-#无论如何，文件的修改时间一定会改变
+" 无论如何，文件的修改时间一定会改变
 :q  :wq
 ```

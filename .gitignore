@@ -9,3 +9,17 @@ handbook-linux.txt
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# editor directories and files:
+.vscode/
+.idea/
+
+# cpp build files:
+build/
+cmake-build-debug/
+
+# rust build files:
+target/
+
+# python build files:
+__pycache__/

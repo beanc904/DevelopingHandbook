@@ -1,0 +1,13 @@
+pkgbase = win-fonts
+	pkgdesc = Default fonts from Windows install iso.
+	pkgver = 0.0.1
+	pkgrel = 1
+	url = https://www.github.com/beanc904/DevelopingHandbook
+	install = .install
+	arch = x86_64
+	license = MIT
+	options = !strip
+	source = win-fonts-v0.0.1.tar.gz
+	sha256sums = 3932c053b5f523c48e5463ac8f37520bf51e02f553caff69a0710b6d61307125
+
+pkgname = win-fonts

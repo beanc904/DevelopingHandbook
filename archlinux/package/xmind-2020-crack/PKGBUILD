@@ -1,0 +1,26 @@
+# Maintainer: Coffee Bean <beanc904@gmail.com>
+pkgname=xmind-2020-crack
+_pkgname=xmind
+pkgver=10.3.1
+pkgrel=1
+pkgdesc="Brainstorming and Mind Mapping Software"
+url="https://github.com/beanc904/DevelopingHandbook"
+license=('MIT')
+arch=(x86_64)
+depends=(gtk3 alsa-lib libxkbfile nss)
+options=(!strip)
+# install=.install
+source=("$_pkgname-2020-amd64-$pkgver.deb")
+sha256sums=(f3fe171ccbe26b1adb80110775d6fc68dc0fa29ee8ad2d2b763b59202403cf59)
+
+prepare() {
+  mkdir -p ${srcdir}/data
+  bsdtar -xf ${srcdir}/data.tar.xz -C ${srcdir}/data
+
+  sed -i -E "s|Exec=/opt/XMind/xmind %U|Exec=env VANA_LICENSE_MODE=true VANA_LICENSE_TO=\"Coffee Bean\" /opt/XMind/xmind %U|g" \
+    "${srcdir}/data/usr/share/applications/xmind.desktop"
+}
+
+package() {
+  mv ${srcdir}/data/* ${pkgdir}/
+}

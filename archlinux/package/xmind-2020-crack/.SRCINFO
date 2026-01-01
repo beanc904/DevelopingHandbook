@@ -1,0 +1,16 @@
+pkgbase = xmind-2020-crack
+	pkgdesc = Brainstorming and Mind Mapping Software
+	pkgver = 10.3.1
+	pkgrel = 1
+	url = https://github.com/beanc904/DevelopingHandbook
+	arch = x86_64
+	license = MIT
+	depends = gtk3
+	depends = alsa-lib
+	depends = libxkbfile
+	depends = nss
+	options = !strip
+	source = xmind-2020-amd64-10.3.1.deb
+	sha256sums = f3fe171ccbe26b1adb80110775d6fc68dc0fa29ee8ad2d2b763b59202403cf59
+
+pkgname = xmind-2020-crack

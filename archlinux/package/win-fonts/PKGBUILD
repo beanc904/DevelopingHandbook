@@ -1,0 +1,22 @@
+# Maintainer: Coffee Bean <beanc904@gmail.com>
+pkgname=win-fonts
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Default fonts from Windows install iso."
+arch=(x86_64)
+url="https://www.github.com/beanc904/DevelopingHandbook"
+license=('MIT')
+options=('!strip')
+install=.install
+source=("$pkgname-v$pkgver.tar.gz")
+sha256sums=('3932c053b5f523c48e5463ac8f37520bf51e02f553caff69a0710b6d61307125')
+
+# prepare() {
+# 	cd "$pkgname-$pkgver"
+# 	patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+# }
+
+package() {
+  install -d ${pkgdir}/usr/share/fonts/win-fonts
+  cp -a ${srcdir}/$pkgname/. ${pkgdir}/usr/share/fonts/win-fonts
+}

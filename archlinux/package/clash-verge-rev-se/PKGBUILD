@@ -1,0 +1,24 @@
+# Maintainer: Azure Zeng <weedycn at outlook dot com>
+# Contributor: Pylogmon <pylogmon@outlook.com>
+
+pkgname=clash-verge-rev-se
+_pkgname=clash-verge-rev
+pkgver=2.4.4
+pkgrel=1
+pkgdesc="Continuation of Clash Verge | A Clash Meta GUI based on Tauri | Special Edition for Arch"
+arch=('x86_64')
+url="https://github.com/clash-verge-rev/clash-verge-rev"
+license=('GPL3')
+depends=('webkit2gtk-4.1' 'gtk3' 'libayatana-appindicator' 'rav1e')
+conflicts=("$_pkgname" "$_pkgname-alpha" "$_pkgname-alpha-bin" "$_pkgname-bin" "$_pkgname-git" "clash-verge" "clash-verge-bin")
+options=(!strip)
+install=.install
+
+source_x86_64=("Clash Verge Special Edition_${pkgver}_amd64.deb")
+
+sha512sums_x86_64=("a693883f712f169da0c54f9c10a4e201fda73c4524e1ffe527caef920f0c5d835799176727ae0fd6259959491fd49bacfcdcc907a0e3ead0b4ab9da5d125bab5")
+
+package() {
+    tar xpf data.tar.gz -C ${pkgdir}
+    #chown -R root:root ${pkgdir}
+}

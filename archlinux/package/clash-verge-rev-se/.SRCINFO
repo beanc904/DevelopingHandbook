@@ -1,0 +1,24 @@
+pkgbase = clash-verge-rev-se
+	pkgdesc = Continuation of Clash Verge | A Clash Meta GUI based on Tauri | Special Edition for Arch
+	pkgver = 2.4.4
+	pkgrel = 1
+	url = https://github.com/clash-verge-rev/clash-verge-rev
+	install = .install
+	arch = x86_64
+	license = GPL3
+	depends = webkit2gtk-4.1
+	depends = gtk3
+	depends = libayatana-appindicator
+	depends = rav1e
+	conflicts = clash-verge-rev
+	conflicts = clash-verge-rev-alpha
+	conflicts = clash-verge-rev-alpha-bin
+	conflicts = clash-verge-rev-bin
+	conflicts = clash-verge-rev-git
+	conflicts = clash-verge
+	conflicts = clash-verge-bin
+	options = !strip
+	source_x86_64 = Clash Verge Special Edition_2.4.4_amd64.deb
+	sha512sums_x86_64 = a693883f712f169da0c54f9c10a4e201fda73c4524e1ffe527caef920f0c5d835799176727ae0fd6259959491fd49bacfcdcc907a0e3ead0b4ab9da5d125bab5
+
+pkgname = clash-verge-rev-se

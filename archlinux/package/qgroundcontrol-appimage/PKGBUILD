@@ -1,0 +1,30 @@
+# Maintainer: Coffee Bean <beanc904@gmail.com>
+pkgname=qgroundcontrol-appimage
+_pkgname=qgroundcontrol
+_pkgname_=QGroundControl
+pkgver=5.0.8
+pkgrel=1.0
+pkgdesc="Cross-platform ground control station for drones (Android, iOS, Mac OS, Linux, Windows)"
+arch=(x86_64)
+url="https://github.com/mavlink/qgroundcontrol"
+license=('MIT')
+depends=(fuse2 gst-plugins-bad gst-libav gst-plugins-base libxkbcommon-x11 xcb-util-cursor)
+makedepends=('7zip')
+options=('!strip')
+install=.install
+# source=("$_pkgname-v$pkgver.appimage")
+source=("${_pkgname}-v${pkgver}.appimage::${url}/releases/download/v${pkgver}/${_pkgname_}-x86_64.AppImage")
+sha256sums=(06969c67ef58ea063def0a8271447a1cc385438c4a7df36813315b4475146737)
+
+prepare () {
+  chmod +x "${_pkgname}-v${pkgver}.appimage"
+  7z x ${srcdir}/${_pkgname}-v${pkgver}.appimage -o${srcdir}/squashfs-root
+  sed -i -E "s|Exec=QGroundControl|Exec=/opt/${_pkgname_}/AppRun|g" "${srcdir}/squashfs-root/org.mavlink.${_pkgname}.desktop"
+  sed -i -E "s|Icon=QGroundControl|Icon=/opt/${_pkgname_}/${_pkgname_}.png|g" "${srcdir}/squashfs-root/org.mavlink.${_pkgname}.desktop"
+}
+
+package () {
+  install -d "${pkgdir}/opt/${_pkgname_}"
+  cp -a "${srcdir}/squashfs-root/." "${pkgdir}/opt/${_pkgname_}"
+  install -Dm644 "${srcdir}/squashfs-root/org.mavlink.${_pkgname}.desktop" "${pkgdir}/usr/share/applications/org.mavlink.${_pkgname}.desktop"
+}

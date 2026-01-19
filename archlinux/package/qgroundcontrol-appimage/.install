@@ -1,0 +1,24 @@
+# Colored makepkg-like functions
+note() {
+    printf "${_blue}==>${_yellow} NOTE:${_bold} %s${_all_off}\n" "$1"
+}
+
+show_cmd() {
+    printf "${_blue}==>${_yellow} CMD:${_bold} %s${_all_off}\n" "$1"
+}
+
+_all_off="$(tput sgr0)"
+_bold="${_all_off}$(tput bold)"
+_blue="${_bold}$(tput setaf 4)"
+_yellow="${_bold}$(tput setaf 3)"
+
+post_install() {
+  note 'Remember to execute the two commands below after install.'
+  show_cmd 'sudo usermod -aG uucp $USER'
+  show_cmd 'sudo systemctl disable --now ModemManager'
+}
+
+# pre_remove() {
+#     # Remove service file silently, as official Debian package does
+#     /usr/bin/uninstall-service
+# }

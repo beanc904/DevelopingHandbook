@@ -1,0 +1,62 @@
+# Color definitions
+_all_off="$(tput sgr0)"
+_bold="${_all_off}$(tput bold)"
+_black="${_bold}$(tput setaf 0)"
+_red="${_bold}$(tput setaf 1)"
+_green="${_bold}$(tput setaf 2)"
+_yellow="${_bold}$(tput setaf 3)"
+_blue="${_bold}$(tput setaf 4)"
+_magenta="${_bold}$(tput setaf 5)"
+_cyan="${_bold}$(tput setaf 6)"
+_white="${_bold}$(tput setaf 7)"
+
+note() {
+    printf "${_blue}==>${_yellow} NOTE:${_bold} %s${_all_off}\n" "$1"
+}
+success() {
+    printf "${_green}==> SUCCESS:${_bold} %s${_all_off}\n" "$1"
+}
+msg2() {
+    printf "${_blue}  ->${_bold} %s${_all_off}\n" "$1"
+}
+
+# This is a default template for a post-install scriptlet.
+# Uncomment only required functions and remove any functions
+# you don't need (and this header).
+
+## arg 1:  the new package version
+#pre_install() {
+	# do something here
+#}
+
+## arg 1:  the new package version
+post_install() {
+  note "Start to inject..."
+  cd /usr/share/typora
+  sudo ./node-inject
+  success "Inject patch successfully."
+  msg2 "Please enter license code(any email is ok) after launch the application."
+  sudo ./license-gen
+}
+
+## arg 1:  the new package version
+## arg 2:  the old package version
+#pre_upgrade() {
+	# do something here
+#}
+
+## arg 1:  the new package version
+## arg 2:  the old package version
+#post_upgrade() {
+	# do something here
+#}
+
+## arg 1:  the old package version
+#pre_remove() {
+	# do something here
+#}
+
+## arg 1:  the old package version
+post_remove() {
+  rm -rf /usr/share/typora
+}

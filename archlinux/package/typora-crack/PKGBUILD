@@ -1,0 +1,37 @@
+# Maintainer: Coffee Bean <beanc904@gmail.com>
+pkgname=typora-crack
+_pkgname=typora
+pkgver=1.8.10
+pkgrel=1
+pkgdesc="A minimal markdown editor and reader."
+arch=(x86_64)
+url="https://www.github.com/beanc904/DevelopingHandbook"
+license=('MIT')
+options=('!strip')
+install=.install
+source=(
+  "${_pkgname}_${pkgver}_amd64.deb"
+  "linux-typora-main.zip"
+)
+sha256sums=(
+  'e592d2cc351c17439952e5955ff886fb871c4e508f758c72ef3974c031e5c4d4'
+  '12b4e77771ff5f392a1ff3e1ab6c5c311102bb257d71573a95a062de124e4ec3'
+)
+
+
+prepare() {
+  mkdir -p ${srcdir}/data
+  bsdtar -xf ${srcdir}/data.tar.xz -C ${srcdir}/data
+}
+
+build() {
+  cd ${srcdir}/linux-typora-main
+  cargo build --release
+  mv ${srcdir}/linux-typora-main/target/release/node-inject \
+    ${srcdir}/linux-typora-main/target/release/license-gen \
+    ${srcdir}/data/usr/share/typora
+}
+
+package() {
+  mv ${srcdir}/data/* ${pkgdir}/
+}

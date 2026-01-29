@@ -1,0 +1,15 @@
+pkgbase = typora-crack
+	pkgdesc = A minimal markdown editor and reader.
+	pkgver = 1.8.10
+	pkgrel = 1
+	url = https://www.github.com/beanc904/DevelopingHandbook
+	install = .install
+	arch = x86_64
+	license = MIT
+	options = !strip
+	source = typora_1.8.10_amd64.deb
+	source = linux-typora-main.zip
+	sha256sums = e592d2cc351c17439952e5955ff886fb871c4e508f758c72ef3974c031e5c4d4
+	sha256sums = 12b4e77771ff5f392a1ff3e1ab6c5c311102bb257d71573a95a062de124e4ec3
+
+pkgname = typora-crack

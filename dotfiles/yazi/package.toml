@@ -1,0 +1,19 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "80cd5b5"
+hash = "170317244d60fbe70ad3cc3353358480"
+
+[[plugin.deps]]
+use = "llanosrocas/githead"
+rev = "71dabe4"
+hash = "73d2758775276ae7d824b43e53d0b350"
+
+[[flavor.deps]]
+use = "956MB/vscode-dark-plus"
+rev = "113cc48"
+hash = "fb2175ea2b78bff55fa83d0661d77407"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "4296a38"
+hash = "eefb18cb038121aed2b6eeaacea5a63e"

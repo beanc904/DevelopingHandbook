@@ -1,0 +1,20 @@
+[[mgr.prepend_keymap]]
+on = [ "g", "d" ]
+run = "cd ~/Desktop"
+desc = "Go ~/Desktop"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "D" ]
+run = "cd ~/Downloads"
+desc = "Go ~/Downloads"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "l" ]
+run = "cd ~/.local"
+desc = "Go ~/.local"
+
+[[mgr.prepend_keymap]]
+on = [ "g", "m" ]
+run = "cd /Volumes"
+desc = "Go Media/Volumes"
+

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# MAIN_DIR=$(dirname $(
+#   cd $(dirname $0)
+#   pwd
+# ))
+
+source "$COLOR_SCHEME_INCLUDE"
+
+VSCODE_WORKBENCH_DIR="/opt/visual-studio-code/resources/app/out/vs/code/electron-browser/workbench"
+# VSCODE_WORKBENCH_DIR="/home/coffeebean/Desktop/workbench"
+
+cd "${VSCODE_WORKBENCH_DIR}" || { error "Directory ${VSCODE_WORKBENCH_DIR} does not exist."; exit 1; }
+pwd
+
+for file in *; do
+  msg2 "Processing file: ${file}"
+  if [[ ${file} == "workbench.js" || ${file} == "workbench.html" ]]; then
+    sudo chmod 777 "${file}"
+    success "Permission of ${file} has been modified."
+  else
+    gio trash "${file}"
+    success "${file} has been trashed."
+  fi
+done
+

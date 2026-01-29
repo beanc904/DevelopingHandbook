@@ -1,0 +1,19 @@
+let mapleader = " "
+inoremap jk <Esc>
+nnoremap ; :
+nnoremap <Tab> :action NextTab<CR>
+nnoremap <S-Tab> :action PreviousTab<CR>
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+
+" 一些常用 nvim 快捷键映射
+nnoremap gd :action GotoDeclaration<CR>
+
+vnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>f :action ReformatCode<CR>
+
+nnoremap <leader>rn :action RenameElement<CR>
+
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>

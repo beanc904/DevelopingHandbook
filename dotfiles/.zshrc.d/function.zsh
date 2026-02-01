@@ -9,7 +9,7 @@ function y() {
 
 # Description: Enable | Disable the global proxy
 function proxy() {
-  source "$HOME/.zshrc.d/custom.sh/msg-color.sh"
+  source "$HOME/.zshrc.d/include.bash/msg-color.sh"
 
   if [[ $1 == "on" ]]; then
     export https_proxy=http://127.0.0.1:7897

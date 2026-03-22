@@ -1,9 +1,12 @@
+> [!Important] MOVE
+> The packages here original has been moved to [beanc904/beanpkgs](https://github.com/beanc904/beanpkgs).
+
 以下列出目前项目中手簿使用的工具清单。
 
 - typora (unix, win)
 - xmind (unix, win)
 - win-fonts (unix)
-- clash-verge-rev-se (arch)
+- clash-verge-se (arch)
 
 下面对需要执行破解操作的软件给出步骤。其余自行安装。
 
